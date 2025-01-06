@@ -1,4 +1,3 @@
-# Arbeidsvoorwaarden-actemium-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +24,21 @@
             background: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #005bb5;
+            padding: 1rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         .section {
             margin-bottom: 2rem;
@@ -60,20 +74,27 @@
             margin-top: 2rem;
             font-size: 0.9rem;
         }
-        .link {
-            text-align: center;
+        .choice-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin: 2rem 0;
         }
-        .link a {
-            text-decoration: none;
-            color: white;
+        .choice-container button {
+            margin: 1rem;
+            padding: 1rem 2rem;
             background-color: #0073e6;
-            padding: 0.75rem 1.5rem;
+            color: white;
+            border: none;
             border-radius: 5px;
             font-size: 1rem;
+            cursor: pointer;
         }
-        .link a:hover {
+        .choice-container button:hover {
             background-color: #005bb5;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -82,66 +103,111 @@
         <h1>Flexibele Arbeidsvoorwaarden</h1>
     </header>
 
-    <div class="container">
-        <!-- Budget Section -->
-        <div class="section">
-            <h2>Uw Budget</h2>
-            <p>Beschikbaar budget: <strong>€ 2.500</strong></p>
-        </div>
+    <div class="choice-container">
+        <h2>Kies uw rol</h2>
+        <button onclick="showOptions('kantoorpersoneel')">Kantoorpersoneel</button>
+        <button onclick="showOptions('onsite')">On-site Werknemers</button>
+    </div>
 
-        <!-- Vakantiedagen Section -->
+    <div class="container hidden" id="kantoorpersoneel">
         <div class="section">
-            <h2>Vakantiedagen</h2>
+            <h2>Kantoorpersoneel - Arbeidsvoorwaarden</h2>
+            <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als kantoorpersoneel.</p>
+
+            <h3>Vakantiedagen</h3>
             <div class="option">
-                <span>5 extra vakantiedagen</span>
+                <span>Startbonus: Extra 5 vakantiedagen in het eerste werkjaar</span>
                 <span>Kost: € 500</span>
                 <button>Kies</button>
             </div>
             <div class="option">
-                <span>Geen extra vakantiedagen</span>
+                <span>Gezinsvriendelijke vakantiedagen: 7 extra dagen voor ouders</span>
+                <span>Kost: € 700</span>
+                <button>Kies</button>
+            </div>
+
+            <h3>Pensioenbijdrage</h3>
+            <div class="option">
+                <span>Flexibele bijdrage: Meer netto salaris door lagere pensioenpremie</span>
                 <span>Kost: € 0</span>
                 <button>Kies</button>
             </div>
-        </div>
-
-        <!-- Pensioen Section -->
-        <div class="section">
-            <h2>Pensioenbijdrage</h2>
             <div class="option">
-                <span>Verhoog bijdrage met 5%</span>
-                <span>Kost: € 750</span>
+                <span>Versnelde pensioenopbouw voor jonge gezinnen</span>
+                <span>Kost: € 800</span>
                 <button>Kies</button>
             </div>
-            <div class="option">
-                <span>Standaard bijdrage</span>
-                <span>Kost: € 0</span>
-                <button>Kies</button>
-            </div>
-        </div>
 
-        <!-- Opleidingsbudget Section -->
-        <div class="section">
-            <h2>Opleidingsbudget</h2>
+            <h3>Opleidingsbudget</h3>
+            <p>Het opleidingsbudget is aanvullend op het standaard aanbod van de organisatie en wordt extra gefinancierd om persoonlijke ontwikkeling te stimuleren.</p>
             <div class="option">
-                <span>Extra € 1.000 voor opleidingen</span>
+                <span>Startopleiding: Budget voor professionele cursussen</span>
                 <span>Kost: € 1.000</span>
                 <button>Kies</button>
             </div>
             <div class="option">
-                <span>Geen extra budget</span>
-                <span>Kost: € 0</span>
+                <span>Training mentorschap en kennisdeling</span>
+                <span>Kost: € 600</span>
                 <button>Kies</button>
             </div>
         </div>
+    </div>
 
-        <!-- Link Section -->
-        <div class="link">
-            <a href="#">Ga naar uw persoonlijke dashboard</a>
+    <div class="container hidden" id="onsite">
+        <div class="section">
+            <h2>On-site Werknemers - Arbeidsvoorwaarden</h2>
+            <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als on-site werknemer.</p>
+
+            <h3>Vakantiedagen</h3>
+            <div class="option">
+                <span>Sabbatical: 3 maanden onbetaald verlof</span>
+                <span>Kost: € 500</span>
+                <button>Kies</button>
+            </div>
+            <div class="option">
+                <span>Extra vakantiegeld bovenop reguliere uitkering</span>
+                <span>Kost: € 700</span>
+                <button>Kies</button>
+            </div>
+
+            <h3>Pensioenbijdrage</h3>
+            <div class="option">
+                <span>Gratis financiële planning voor pensioen</span>
+                <span>Kost: € 400</span>
+                <button>Kies</button>
+            </div>
+            <div class="option">
+                <span>Extra bijdrage van werkgever in laatste 5 jaar</span>
+                <span>Kost: € 900</span>
+                <button>Kies</button>
+            </div>
+
+            <h3>Opleidingsbudget</h3>
+            <p>Het opleidingsbudget is aanvullend op het standaard aanbod van de organisatie en wordt extra gefinancierd om persoonlijke ontwikkeling te stimuleren.</p>
+            <div class="option">
+                <span>Coachingprogramma’s voor leiderschap</span>
+                <span>Kost: € 800</span>
+                <button>Kies</button>
+            </div>
+            <div class="option">
+                <span>Training voor vrijwilligerswerk na pensionering</span>
+                <span>Kost: € 500</span>
+                <button>Kies</button>
+            </div>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2025 Flexibele Arbeidsvoorwaarden Platform. Alle rechten voorbehouden.</p>
     </footer>
+
+    <script>
+        function showOptions(role) {
+            document.querySelectorAll('.container').forEach(container => {
+                container.classList.add('hidden');
+            });
+            document.getElementById(role).classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
