@@ -154,6 +154,16 @@
                 <span>Kost: € 0</span>
                 <button>Kies</button>
             </div>
+            <div class="option">
+                <span>Bedrijfsfitness: Toegang tot bedrijfsfitnessfaciliteiten</span>
+                <span>Kost: € 300</span>
+                <button>Kies</button>
+            </div>
+            <div class="option">
+                <span>Betaald gezinsuitje: Pretpark of dierentuin voor het gezin</span>
+                <span>Kost: € 500</span>
+                <button>Kies</button>
+            </div>
         </div>
     </div>
 
@@ -213,6 +223,16 @@
             <div class="option">
                 <span>Sabbatical: 3 maanden onbetaald verlof</span>
                 <span>Kost: € 0</span>
+                <button>Kies</button>
+            </div>
+            <div class="option">
+                <span>Bedrijfsfitness: Toegang tot bedrijfsfitnessfaciliteiten</span>
+                <span>Kost: € 300</span>
+                <button>Kies</button>
+            </div>
+            <div class="option">
+                <span>Betaald gezinsuitje: Pretpark of dierentuin voor het gezin</span>
+                <span>Kost: € 500</span>
                 <button>Kies</button>
             </div>
         </div>
