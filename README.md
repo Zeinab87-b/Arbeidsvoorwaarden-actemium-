@@ -101,6 +101,7 @@
 <body>
     <header>
         <h1>Flexibele Arbeidsvoorwaarden</h1>
+        <p>Deze extra arbeidsvoorwaarden staan los van de CAO Metaal en Techniek en zijn bedoeld om persoonlijke voorkeuren en behoeften te ondersteunen.</p>
     </header>
 
     <div class="choice-container">
@@ -112,7 +113,7 @@
     <div class="container hidden" id="kantoorpersoneel">
         <div class="section">
             <h2>Kantoorpersoneel - Arbeidsvoorwaarden</h2>
-            <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als kantoorpersoneel.</p>
+            <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als kantoorpersoneel. Budget: €3000.</p>
 
             <h3>Vakantiedagen</h3>
             <div class="option">
@@ -150,48 +151,62 @@
                 <span>Kost: € 600</span>
                 <button>Kies</button>
             </div>
+
+            <h3>Overig</h3>
+            <div class="option">
+                <span>Sabbatical: 3 maanden onbetaald verlof</span>
+                <span>Kost: € 0</span>
+                <button>Kies</button>
+            </div>
         </div>
     </div>
 
     <div class="container hidden" id="onsite">
         <div class="section">
             <h2>On-site Werknemers - Arbeidsvoorwaarden</h2>
-            <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als on-site werknemer.</p>
+            <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als on-site werknemer. Budget: €3000.</p>
 
             <h3>Vakantiedagen</h3>
             <div class="option">
-                <span>Sabbatical: 3 maanden onbetaald verlof</span>
+                <span>Startbonus: Extra 5 vakantiedagen in het eerste werkjaar</span>
                 <span>Kost: € 500</span>
                 <button>Kies</button>
             </div>
             <div class="option">
-                <span>Extra vakantiegeld bovenop reguliere uitkering</span>
+                <span>Gezinsvriendelijke vakantiedagen: 7 extra dagen voor ouders</span>
                 <span>Kost: € 700</span>
                 <button>Kies</button>
             </div>
 
             <h3>Pensioenbijdrage</h3>
             <div class="option">
-                <span>Gratis financiële planning voor pensioen</span>
-                <span>Kost: € 400</span>
+                <span>Flexibele bijdrage: Meer netto salaris door lagere pensioenpremie</span>
+                <span>Kost: € 0</span>
                 <button>Kies</button>
             </div>
             <div class="option">
-                <span>Extra bijdrage van werkgever in laatste 5 jaar</span>
-                <span>Kost: € 900</span>
+                <span>Versnelde pensioenopbouw voor jonge gezinnen</span>
+                <span>Kost: € 800</span>
                 <button>Kies</button>
             </div>
 
             <h3>Opleidingsbudget</h3>
             <p>Het opleidingsbudget is aanvullend op het standaard aanbod van de organisatie en wordt extra gefinancierd om persoonlijke ontwikkeling te stimuleren.</p>
             <div class="option">
-                <span>Coachingprogramma’s voor leiderschap</span>
-                <span>Kost: € 800</span>
+                <span>Startopleiding: Budget voor professionele cursussen</span>
+                <span>Kost: € 1.000</span>
                 <button>Kies</button>
             </div>
             <div class="option">
-                <span>Training voor vrijwilligerswerk na pensionering</span>
-                <span>Kost: € 500</span>
+                <span>Training mentorschap en kennisdeling</span>
+                <span>Kost: € 600</span>
+                <button>Kies</button>
+            </div>
+
+            <h3>Overig</h3>
+            <div class="option">
+                <span>Sabbatical: 3 maanden onbetaald verlof</span>
+                <span>Kost: € 0</span>
                 <button>Kies</button>
             </div>
         </div>
@@ -211,3 +226,4 @@
     </script>
 </body>
 </html>
+
