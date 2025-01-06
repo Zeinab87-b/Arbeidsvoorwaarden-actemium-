@@ -209,4 +209,26 @@
                 <button>Kies</button>
             </div>
 
-            <h
+            <h3>Overig</h3>
+            <div class="option">
+                <span>Sabbatical: 3 maanden onbetaald verlof</span>
+                <span>Kost: € 0</span>
+                <button>Kies</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Flexibele Arbeidsvoorwaarden Platform. Alle rechten voorbehouden.</p>
+    </footer>
+
+    <script>
+        function showOptions(role) {
+            document.querySelectorAll('.container').forEach(container => {
+                container.classList.add('hidden');
+            });
+            document.getElementById(role).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
