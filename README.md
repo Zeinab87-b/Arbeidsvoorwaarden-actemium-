@@ -26,28 +26,27 @@
             border-radius: 8px;
             text-align: center;
         }
-        .content-container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        nav {
+        .choice-container {
             display: flex;
-            justify-content: center;
-            background-color: #005bb5;
-            padding: 1rem;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem 0;
         }
-        nav a {
+        .choice-container button {
+            margin: 1rem;
+            padding: 1rem 2rem;
+            background-color: #0073e6;
             color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
         }
-        nav a:hover {
-            text-decoration: underline;
+        .choice-container button:hover {
+            background-color: #005bb5;
+        }
+        .hidden {
+            display: none;
         }
         .section {
             margin-bottom: 2rem;
@@ -88,19 +87,17 @@
 <body>
     <header>
         <h1>Flexibele Arbeidsvoorwaarden</h1>
+        <p><strong>Let op:</strong> Deze extra arbeidsvoorwaarden staan los van de CAO Metaal en Techniek en zijn bedoeld om persoonlijke voorkeuren en behoeften te ondersteunen.</p>
     </header>
 
-    <div class="container">
-        <p><strong>Let op:</strong> Deze extra arbeidsvoorwaarden staan los van de CAO Metaal en Techniek en zijn bedoeld om persoonlijke voorkeuren en behoeften te ondersteunen.</p>
+    <div class="choice-container">
+        <h2>Kies uw rol</h2>
+        <button onclick="showOptions('kantoorpersoneel')">Kantoorpersoneel</button>
+        <button onclick="showOptions('onsite')">On-site Werknemers</button>
     </div>
 
-    <div class="content-container">
-        <nav>
-            <a href="#kantoorpersoneel">Kantoorpersoneel</a>
-            <a href="#onsite">On-site Werknemers</a>
-        </nav>
-
-        <div class="section" id="kantoorpersoneel">
+    <div class="container hidden" id="kantoorpersoneel">
+        <div class="section">
             <h2>Kantoorpersoneel - Arbeidsvoorwaarden</h2>
             <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als kantoorpersoneel. Budget: €3000.</p>
 
@@ -158,8 +155,10 @@
                 <button>Kies</button>
             </div>
         </div>
+    </div>
 
-        <div class="section" id="onsite">
+    <div class="container hidden" id="onsite">
+        <div class="section">
             <h2>On-site Werknemers - Arbeidsvoorwaarden</h2>
             <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als on-site werknemer. Budget: €3000.</p>
 
@@ -210,17 +209,4 @@
                 <button>Kies</button>
             </div>
 
-            <h3>Overig</h3>
-            <div class="option">
-                <span>Sabbatical: 3 maanden onbetaald verlof</span>
-                <span>Kost: € 0</span>
-                <button>Kies</button>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Flexibele Arbeidsvoorwaarden Platform. Alle rechten voorbehouden.</p>
-    </footer>
-</body>
-</html>
+            <h
