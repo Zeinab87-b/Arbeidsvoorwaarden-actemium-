@@ -14,10 +14,19 @@
         header {
             background-color: #0073e6;
             color: white;
-            padding: 1rem;
+            padding: 2rem;
             text-align: center;
         }
         .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .content-container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 1rem;
@@ -74,44 +83,24 @@
             margin-top: 2rem;
             font-size: 0.9rem;
         }
-        .choice-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 2rem 0;
-        }
-        .choice-container button {
-            margin: 1rem;
-            padding: 1rem 2rem;
-            background-color: #0073e6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        .choice-container button:hover {
-            background-color: #005bb5;
-        }
-        .hidden {
-            display: none;
-        }
     </style>
 </head>
 <body>
     <header>
         <h1>Flexibele Arbeidsvoorwaarden</h1>
-        <p>Deze extra arbeidsvoorwaarden staan los van de CAO Metaal en Techniek en zijn bedoeld om persoonlijke voorkeuren en behoeften te ondersteunen.</p>
     </header>
 
-    <div class="choice-container">
-        <h2>Kies uw rol</h2>
-        <button onclick="showOptions('kantoorpersoneel')">Kantoorpersoneel</button>
-        <button onclick="showOptions('onsite')">On-site Werknemers</button>
+    <div class="container">
+        <p><strong>Let op:</strong> Deze extra arbeidsvoorwaarden staan los van de CAO Metaal en Techniek en zijn bedoeld om persoonlijke voorkeuren en behoeften te ondersteunen.</p>
     </div>
 
-    <div class="container hidden" id="kantoorpersoneel">
-        <div class="section">
+    <div class="content-container">
+        <nav>
+            <a href="#kantoorpersoneel">Kantoorpersoneel</a>
+            <a href="#onsite">On-site Werknemers</a>
+        </nav>
+
+        <div class="section" id="kantoorpersoneel">
             <h2>Kantoorpersoneel - Arbeidsvoorwaarden</h2>
             <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als kantoorpersoneel. Budget: €3000.</p>
 
@@ -138,6 +127,16 @@
                 <span>Kost: € 800</span>
                 <button>Kies</button>
             </div>
+            <div class="option">
+                <span>Extra pensioenopbouw: Aanvullende storting door werkgever</span>
+                <span>Kost: € 1.000</span>
+                <button>Kies</button>
+            </div>
+            <div class="option">
+                <span>Financiële planning: Gratis sessies met een pensioenadviseur</span>
+                <span>Kost: € 500</span>
+                <button>Kies</button>
+            </div>
 
             <h3>Opleidingsbudget</h3>
             <p>Het opleidingsbudget is aanvullend op het standaard aanbod van de organisatie en wordt extra gefinancierd om persoonlijke ontwikkeling te stimuleren.</p>
@@ -159,10 +158,8 @@
                 <button>Kies</button>
             </div>
         </div>
-    </div>
 
-    <div class="container hidden" id="onsite">
-        <div class="section">
+        <div class="section" id="onsite">
             <h2>On-site Werknemers - Arbeidsvoorwaarden</h2>
             <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als on-site werknemer. Budget: €3000.</p>
 
@@ -187,6 +184,16 @@
             <div class="option">
                 <span>Versnelde pensioenopbouw voor jonge gezinnen</span>
                 <span>Kost: € 800</span>
+                <button>Kies</button>
+            </div>
+            <div class="option">
+                <span>Extra pensioenopbouw: Aanvullende storting door werkgever</span>
+                <span>Kost: € 1.000</span>
+                <button>Kies</button>
+            </div>
+            <div class="option">
+                <span>Financiële planning: Gratis sessies met een pensioenadviseur</span>
+                <span>Kost: € 500</span>
                 <button>Kies</button>
             </div>
 
@@ -215,15 +222,5 @@
     <footer>
         <p>&copy; 2025 Flexibele Arbeidsvoorwaarden Platform. Alle rechten voorbehouden.</p>
     </footer>
-
-    <script>
-        function showOptions(role) {
-            document.querySelectorAll('.container').forEach(container => {
-                container.classList.add('hidden');
-            });
-            document.getElementById(role).classList.remove('hidden');
-        }
-    </script>
 </body>
 </html>
-
