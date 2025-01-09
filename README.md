@@ -1,254 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexibele Arbeidsvoorwaarden</title>
+    <title>Arbeidsvoorwaarden op Maat</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f4f4f9;
         }
         header {
-            background-color: #0073e6;
+            background-color: #4CAF50;
             color: white;
-            padding: 2rem;
+            padding: 10px;
             text-align: center;
         }
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-        .choice-container {
+        nav {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 2rem 0;
+            justify-content: center;
+            background: #ddd;
+            padding: 10px;
         }
-        .choice-container button {
-            margin: 1rem;
-            padding: 1rem 2rem;
-            background-color: #0073e6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
         }
-        .choice-container button:hover {
-            background-color: #005bb5;
+        nav a.active {
+            color: #4CAF50;
         }
-        .hidden {
+        .content {
             display: none;
+            padding: 20px;
         }
-        .section {
-            margin-bottom: 2rem;
+        .content.active {
+            display: block;
         }
-        .section h2 {
-            margin-top: 0;
-            color: #0073e6;
+        .form-group {
+            margin-bottom: 15px;
         }
-        .option {
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group select, .form-group button {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .options {
+            margin-top: 20px;
+        }
+        .lifespan {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
-        .option button {
-            background-color: #0073e6;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
+        .lifespan h3 {
+            margin-top: 0;
+        }
+        .token-info {
+            margin-top: 20px;
+            background: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            cursor: pointer;
         }
-        .option button:hover {
-            background-color: #005bb5;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #f1f1f1;
-            margin-top: 2rem;
-            font-size: 0.9rem;
+        .token-info span {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Flexibele Arbeidsvoorwaarden</h1>
-        <p><strong>Let op:</strong> Deze extra arbeidsvoorwaarden staan los van de CAO Metaal en Techniek en zijn bedoeld om persoonlijke voorkeuren en behoeften te ondersteunen.</p>
-    </header>
 
-    <div class="choice-container">
-        <h2>Kies uw rol</h2>
-        <button onclick="showOptions('kantoorpersoneel')">Kantoorpersoneel</button>
-        <button onclick="showOptions('onsite')">On-site Werknemers</button>
+<header>
+    <h1>Arbeidsvoorwaarden op Maat</h1>
+</header>
+
+<nav>
+    <a href="#" class="tab-link active" data-tab="tab-choose">Kies Je Rol</a>
+    <a href="#" class="tab-link" data-tab="tab-options">Arbeidsvoorwaarden</a>
+</nav>
+
+<div id="tab-choose" class="content active">
+    <h2>Kies jouw rol</h2>
+    <div class="form-group">
+        <label for="role">Ben je kantoorpersoneel of on-site medewerker?</label>
+        <select id="role">
+            <option value="">-- Selecteer een optie --</option>
+            <option value="kantoor">Kantoorpersoneel</option>
+            <option value="on-site">On-site medewerker</option>
+        </select>
     </div>
+    <button id="choose-role">Ga verder</button>
+</div>
 
-    <div class="container hidden" id="kantoorpersoneel">
-        <div class="section">
-            <h2>Kantoorpersoneel - Arbeidsvoorwaarden</h2>
-            <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als kantoorpersoneel. Budget: €3000.</p>
-
-            <h3>Vakantiedagen</h3>
-            <div class="option">
-                <span>Startbonus: Extra 5 vakantiedagen in het eerste werkjaar</span>
-                <span>Kost: € 500</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Gezinsvriendelijke vakantiedagen: 7 extra dagen voor ouders</span>
-                <span>Kost: € 700</span>
-                <button>Kies</button>
-            </div>
-
-            <h3>Pensioenbijdrage</h3>
-            <div class="option">
-                <span>Flexibele bijdrage: Meer netto salaris door lagere pensioenpremie</span>
-                <span>Kost: € 0</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Versnelde pensioenopbouw voor jonge gezinnen</span>
-                <span>Kost: € 800</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Extra pensioenopbouw: Aanvullende storting door werkgever</span>
-                <span>Kost: € 1.000</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Financiële planning: Gratis sessies met een pensioenadviseur</span>
-                <span>Kost: € 500</span>
-                <button>Kies</button>
-            </div>
-
-            <h3>Opleidingsbudget</h3>
-            <p>Het opleidingsbudget is aanvullend op het standaard aanbod van de organisatie en wordt extra gefinancierd om persoonlijke ontwikkeling te stimuleren.</p>
-            <div class="option">
-                <span>Startopleiding: Budget voor professionele cursussen</span>
-                <span>Kost: € 1.000</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Training mentorschap en kennisdeling</span>
-                <span>Kost: € 600</span>
-                <button>Kies</button>
-            </div>
-
-            <h3>Overig</h3>
-            <div class="option">
-                <span>Sabbatical: 3 maanden onbetaald verlof</span>
-                <span>Kost: € 0</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Bedrijfsfitness: Toegang tot bedrijfsfitnessfaciliteiten</span>
-                <span>Kost: € 300</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Betaald gezinsuitje: Pretpark of dierentuin voor het gezin</span>
-                <span>Kost: € 500</span>
-                <button>Kies</button>
-            </div>
+<div id="tab-options" class="content">
+    <h2>Arbeidsvoorwaarden</h2>
+    <div class="token-info">
+        Je hebt <span id="token-count">25</span> tokens. Verdeel deze tokens over de arbeidsvoorwaarden.
+    </div>
+    <div class="options">
+        <div class="lifespan" id="phase-1">
+            <h3>1e Levensfase (18-30 jaar)</h3>
+            <ul>
+                <li>
+                    Onbeperkt toegang tot trainingen en cursussen voor persoonlijke groei (<span data-cost="5">5 tokens</span>)
+                    <button class="allocate-button" data-phase="1" data-cost="5">Toewijzen</button>
+                </li>
+                <li>
+                    Extra vrije dagen voor studies of examens (<span data-cost="4">4 tokens</span>)
+                    <button class="allocate-button" data-phase="1" data-cost="4">Toewijzen</button>
+                </li>
+                <li>
+                    Sportabonnement of wellnessprogramma (<span data-cost="3">3 tokens</span>)
+                    <button class="allocate-button" data-phase="1" data-cost="3">Toewijzen</button>
+                </li>
+                <li>
+                    Startbonus of studieleningaflossingsregeling (<span data-cost="6">6 tokens</span>)
+                    <button class="allocate-button" data-phase="1" data-cost="6">Toewijzen</button>
+                </li>
+                <li>
+                    Toegang tot betaalbare huisvesting via het bedrijf (<span data-cost="7">7 tokens</span>)
+                    <button class="allocate-button" data-phase="1" data-cost="7">Toewijzen</button>
+                </li>
+                <li id="extra-on-site" style="display: none;">
+                    Ondersteuning bij betalen rijbewijs (alleen on-site) (<span data-cost="5">5 tokens</span>)
+                    <button class="allocate-button" data-phase="1" data-cost="5">Toewijzen</button>
+                </li>
+            </ul>
         </div>
+        <!-- Herhaal dit voor andere fasen -->
     </div>
+</div>
 
-    <div class="container hidden" id="onsite">
-        <div class="section">
-            <h2>On-site Werknemers - Arbeidsvoorwaarden</h2>
-            <p>Hier kunt u arbeidsvoorwaarden kiezen die passen bij uw rol als on-site werknemer. Budget: €3000.</p>
+<script>
+    const tabs = document.querySelectorAll('.tab-link');
+    const contents = document.querySelectorAll('.content');
+    const roleSelect = document.getElementById('role');
+    const button = document.getElementById('choose-role');
+    const extraOnSite = document.getElementById('extra-on-site');
+    const tokenCountDisplay = document.getElementById('token-count');
+    const allocateButtons = document.querySelectorAll('.allocate-button');
 
-            <h3>Vakantiedagen</h3>
-            <div class="option">
-                <span>Startbonus: Extra 5 vakantiedagen in het eerste werkjaar</span>
-                <span>Kost: € 500</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Gezinsvriendelijke vakantiedagen: 7 extra dagen voor ouders</span>
-                <span>Kost: € 700</span>
-                <button>Kies</button>
-            </div>
+    let remainingTokens = 25;
 
-            <h3>Pensioenbijdrage</h3>
-            <div class="option">
-                <span>Flexibele bijdrage: Meer netto salaris door lagere pensioenpremie</span>
-                <span>Kost: € 0</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Versnelde pensioenopbouw voor jonge gezinnen</span>
-                <span>Kost: € 800</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Extra pensioenopbouw: Aanvullende storting door werkgever</span>
-                <span>Kost: € 1.000</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Financiële planning: Gratis sessies met een pensioenadviseur</span>
-                <span>Kost: € 500</span>
-                <button>Kies</button>
-            </div>
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+    });
 
-            <h3>Opleidingsbudget</h3>
-            <p>Het opleidingsbudget is aanvullend op het standaard aanbod van de organisatie en wordt extra gefinancierd om persoonlijke ontwikkeling te stimuleren.</p>
-            <div class="option">
-                <span>Startopleiding: Budget voor professionele cursussen</span>
-                <span>Kost: € 1.000</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Training mentorschap en kennisdeling</span>
-                <span>Kost: € 600</span>
-                <button>Kies</button>
-            </div>
-
-            <h3>Overig</h3>
-            <div class="option">
-                <span>Sabbatical: 3 maanden onbetaald verlof</span>
-                <span>Kost: € 0</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Bedrijfsfitness: Toegang tot bedrijfsfitnessfaciliteiten</span>
-                <span>Kost: € 300</span>
-                <button>Kies</button>
-            </div>
-            <div class="option">
-                <span>Betaald gezinsuitje: Pretpark of dierentuin voor het gezin</span>
-                <span>Kost: € 500</span>
-                <button>Kies</button>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Flexibele Arbeidsvoorwaarden Platform. Alle rechten voorbehouden.</p>
-    </footer>
-
-    <script>
-        function showOptions(role) {
-            document.querySelectorAll('.container').forEach(container => {
-                container.classList.add('hidden');
-            });
-            document.getElementById(role).classList.remove('hidden');
+    button.addEventListener('click', () => {
+        const role = roleSelect.value;
+        if (role === 'on-site') {
+            extraOnSite.style.display = 'block';
+        } else {
+            extraOnSite.style.display = 'none';
         }
-    </script>
+        tabs[1].click();
+    });
+
+    allocateButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const cost = parseInt(button.dataset.cost);
+            if (remainingTokens >= cost) {
+                remainingTokens -= cost;
+                tokenCountDisplay.textContent = remainingTokens;
+                button.disabled = true;
+                button.textContent = 'Toegewezen';
+            } else {
+                alert('Niet genoeg tokens beschikbaar!');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
